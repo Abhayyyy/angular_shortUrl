@@ -1,0 +1,7 @@
+<h1>Short URL Generator</h1>
+<form (ngSubmit)="generateShortURL()">
+  <label for="urlInput">Enter URL:</label>
+  <input type="text" id="urlInput" [(ngModel)]="originalURL" name="originalURL">
+  <button type="submit">Generate Short URL</button>
+</form>
+<p *ngIf="shortURL">Short URL: <a href="originalURL" [routerLink]="['/', shortURL]">{{ shortURL }}</a></p>
